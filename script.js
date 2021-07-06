@@ -1,3 +1,5 @@
+/* eslint-disable max-classes-per-file */
+
 const booksWrapper = document.querySelector('.books-wrapper');
 const titleInput = document.querySelector('#new-book-title');
 const authorInput = document.querySelector('#new-book-author');
@@ -11,8 +13,8 @@ class Book {
 }
 
 class Library {
-  constructor(){
-    this.books = [];
+  constructor(booksArr = []) {
+    this.books = booksArr;
   }
 
   addBook(book) {
@@ -28,51 +30,33 @@ class Library {
   getBooks() {
     return this.books;
   }
-
 }
 
-let book1 = new Book('Sapiens: A Brief History of Humankind', 'Yuval Noah Harari');
-let book2 = new Book('Homo Deus', 'Yuval Noah Harari');
+const book1 = new Book('Sapiens: A Brief History of Humankind', 'Yuval Noah Harari');
+const book2 = new Book('Homo Deus', 'Yuval Noah Harari');
 
-let library = new Library;
+let library = new Library();
 
 library.addBook(book1);
 library.addBook(book2);
-
-console.log(library.books);
 
 function setStorage(libraryArr) {
   localStorage.setItem('library', JSON.stringify(libraryArr));
 }
 
 function getStorage() {
-  books = JSON.parse(localStorage.getItem('library'));
+  const libraryArr = JSON.parse(localStorage.getItem('library'));
+  const localLibrary = libraryArr.map((book) => new Book(book.title, book.author));
+  library = new Library(localLibrary);
 }
 
 function checkStorage() {
   if (localStorage.length > 0) {
     getStorage();
   } else {
-    setStorage();
+    setStorage(library.getBooks());
   }
 }
-
-// function addBook(title, author) {
-//   const newBook = {
-//     title,
-//     author,
-//   };
-
-//   books.push(newBook);
-//   setStorage();
-//   renderBooks(books);// eslint-disable-line
-// }
-
-// function removeBook(id) {
-//   books.splice(id, 1);
-//   setStorage();
-//   renderBooks(books);// eslint-disable-line
-// }
 
 function renderBooks(arr) {
   booksWrapper.innerHTML = '';
@@ -97,6 +81,7 @@ function renderBooks(arr) {
       const bookId = index;
       library.removeBook(bookId);
       renderBooks(library.getBooks());
+      setStorage(library.getBooks());
     });
 
     bookDiv.appendChild(bookTitle);
@@ -114,7 +99,8 @@ addBtn.addEventListener('click', () => {
   titleInput.value = '';
   authorInput.value = '';
   renderBooks(library.getBooks());
+  setStorage(library.getBooks());
 });
 
-//checkStorage();
+checkStorage();
 renderBooks(library.getBooks());
