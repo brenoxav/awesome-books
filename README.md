@@ -4,8 +4,6 @@
 
 > A basic website that allows users to add/remove books from a list.
 
-
-
 ## Built With
 
 - Javascript
@@ -34,7 +32,6 @@ You can write the title and the author of the book in the section that the place
 To delete a book you just have to click the delete button of the book you want to delete.
 
 
-
 👤 **Author 1**
 
 - GitHub: [brenoxav](https://github.com/brenoxav)
@@ -57,4 +54,4 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-- To developers, Microverse
+- Microverse
