@@ -12,16 +12,22 @@
 
 <body>
   <main>
-    <div class="container-md">
-      <h1 class="h1 text-center">All Awesome Books</h1>
+    <div class="container-md d-flex flex-column align-items-center">
+      <h1 class="h1 text-center my-4">All Awesome Books</h1>
       <table class="table table-striped">
         <tbody class="books-wrapper">
         </tbody>
       </table>
-      <form>
-        <input type="text" placeholder="Title" id="new-book-title">
-        <input type="text" placeholder="Author" id="new-book-author">
-        <button type="button" class="add-btn"> Add </button>
+      <hr class="my-6">
+      <form class="card px-4 w-50">
+        <div class="card-body">
+          <h4 class="card-title text-center mb-3">Add a new Book</h4>
+          <input type="text" class="form-control my-2" placeholder="Title" id="new-book-title">
+          <input type="text" class="form-control my-2" placeholder="Author" id="new-book-author">
+          <div class="text-end">
+            <button type="button" class="add-btn btn btn-primary mt-3"> Add </button>
+          </div>
+        </div>
       </form>
     </div>
   </main>

@@ -70,7 +70,7 @@ function renderBooks(arr) {
     removeBtn.classList.add('btn', 'btn-sm', 'btn-danger');
     removeBtn.textContent = 'Remove';
     removeBtn.setAttribute('data-id', index);
-    
+
     removeBtn.addEventListener('click', () => {
       const bookId = index;
       library.removeBook(bookId);
