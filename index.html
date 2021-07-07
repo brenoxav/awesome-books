@@ -13,13 +13,35 @@
 
 <body>
   <main>
-    <div class="container-md d-flex flex-column align-items-center">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Awesome Books</a>
+        <div class="" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link list-page-link" href="#">List</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link add-page-link" href="#">Add new</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link contact-page-link" href="#">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="list-page container-md d-flex flex-column align-items-center">
       <h1 class="h1 text-center my-4">All Awesome Books</h1>
       <table class="table table-striped">
         <tbody class="books-wrapper">
         </tbody>
       </table>
       <hr class="my-6">
+    </div>
+
+    <div class="add-page d-none container-md d-flex flex-column align-items-center">
       <form class="card px-4 w-50">
         <div class="card-body">
           <h4 class="card-title text-center mb-3">Add a new Book</h4>
@@ -31,6 +53,22 @@
         </div>
       </form>
     </div>
+
+    <div class="contact-page d-none container-md d-flex flex-column align-items-center">
+      <h1 class="h1 text-center my-4">Contact Information</h1>
+      <p>Do you have any questions or just want to say "Hello"?</p>
+      <p>You can reach out to us!</p>
+      <ul>
+        <li>Our e-mail: contact@awesomebooks.com</li>
+        <li>Our phone number: 001 234 555-6677</li>
+        <li>Our address: 123, Bookstore St.</li>
+      </ul>
+    </div>
+
+  <footer class="footer mt-auto py-3 bg-light">
+    <div class="container">Copyright</div>
+  </footer>
+
   </main>
   <script src="script.js"></script>
 </body>

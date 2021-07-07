@@ -1,4 +1,11 @@
 /* eslint-disable max-classes-per-file */
+const listPageLink = document.querySelector('.list-page-link');
+const addPageLink = document.querySelector('.add-page-link');
+const contactPageLink = document.querySelector('.contact-page-link');
+
+const listPage = document.querySelector('.list-page');
+const addPage = document.querySelector('.add-page');
+const contactPage = document.querySelector('.contact-page');
 
 const booksWrapper = document.querySelector('.books-wrapper');
 const titleInput = document.querySelector('#new-book-title');
