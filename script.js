@@ -61,22 +61,16 @@ function checkStorage() {
 function renderBooks(arr) {
   booksWrapper.innerHTML = '';
   arr.forEach((book, index) => {
-    const bookDiv = document.createElement('div');
-    bookDiv.classList.add('book');
-
-    const bookTitle = document.createElement('p');
-    bookTitle.textContent = book.title;
-    bookTitle.classList.add('book-title');
-
-    const bookAuthor = document.createElement('p');
-    bookAuthor.classList.add('book-author');
-    bookAuthor.textContent = book.author;
-
+    const bookRow = document.createElement('tr');
+    bookRow.classList.add('book');
+    const bookTitle = document.createElement('td');
+    bookTitle.textContent = `"${book.title}" by ${book.author}`;
+    const btnWrapper = document.createElement('td');
     const removeBtn = document.createElement('button');
-    removeBtn.classList.add('remove-btn');
+    removeBtn.classList.add('btn', 'btn-sm', 'btn-danger');
     removeBtn.textContent = 'Remove';
     removeBtn.setAttribute('data-id', index);
-
+    
     removeBtn.addEventListener('click', () => {
       const bookId = index;
       library.removeBook(bookId);
@@ -84,11 +78,10 @@ function renderBooks(arr) {
       setStorage(library.getBooks());
     });
 
-    bookDiv.appendChild(bookTitle);
-    bookDiv.appendChild(bookAuthor);
-    bookDiv.appendChild(removeBtn);
-
-    booksWrapper.appendChild(bookDiv);
+    btnWrapper.appendChild(removeBtn);
+    bookRow.appendChild(bookTitle);
+    bookRow.appendChild(btnWrapper);
+    booksWrapper.appendChild(bookRow);
   });
 }
 
