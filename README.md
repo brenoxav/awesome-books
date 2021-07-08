@@ -4,7 +4,9 @@
 
 > A basic website that allows users to add/remove books from a list.
 
-![](screenshot.png)
+![](screenshot-1.png)
+![](screenshot-2.png)
+![](screenshot-3.png)
 
 ## Built With
 

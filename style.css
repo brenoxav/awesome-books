@@ -1,3 +1,11 @@
-main {
-  margin: auto;
+.current-time {
+  padding: 1rem;
+  text-align: end;
+}
+
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  right: 0;
 }
