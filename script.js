@@ -1,4 +1,5 @@
 /* eslint-disable max-classes-per-file */
+const { DateTime } = luxon; // eslint-disable-line
 
 const listPageLink = document.querySelector('.list-page-link');
 const addPageLink = document.querySelector('.add-page-link');
@@ -13,6 +14,10 @@ const titleInput = document.querySelector('#new-book-title');
 const authorInput = document.querySelector('#new-book-author');
 const addBtn = document.querySelector('.add-btn');
 
+const currentTime = document.querySelector('.current-time');
+const dt = DateTime.now();
+
+currentTime.textContent = dt.toLocaleString(DateTime.DATETIME_MED);
 
 class Book {
   constructor(title, author) {
@@ -105,32 +110,30 @@ addBtn.addEventListener('click', () => {
 });
 
 function displayPage(currentPage) {
-  console.log('diplay page function')
   if (currentPage.classList.contains('d-none')) {
-    currentPage.classList.remove('d-none')
-    switch (currentPage){
+    currentPage.classList.remove('d-none');
+    switch (currentPage) {
       case listPage:
-        addPage.classList.add('d-none')
-        contactPage.classList.add('d-none')
+        addPage.classList.add('d-none');
+        contactPage.classList.add('d-none');
         break;
       case addPage:
-        listPage.classList.add('d-none')
-        contactPage.classList.add('d-none')
+        listPage.classList.add('d-none');
+        contactPage.classList.add('d-none');
         break;
       case contactPage:
-        addPage.classList.add('d-none')
-        listPage.classList.add('d-none')
+        addPage.classList.add('d-none');
+        listPage.classList.add('d-none');
+        break;
+      default:
         break;
     }
   }
-  
 }
-
 
 listPageLink.addEventListener('click', () => displayPage(listPage));
 addPageLink.addEventListener('click', () => displayPage(addPage));
-contactPageLink.addEventListener('click', ()=> displayPage(contactPage));
+contactPageLink.addEventListener('click', () => displayPage(contactPage));
 
 checkStorage();
 renderBooks(library.getBooks());
-

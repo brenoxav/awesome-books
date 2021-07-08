@@ -13,11 +13,11 @@
 
 <body>
   <main>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand navbar-light bg-light">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">Awesome Books</a>
-        <div class="" id="navbarNav">
-          <ul class="navbar-nav">
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="ms-auto navbar-nav">
             <li class="nav-item">
               <a class="nav-link list-page-link" href="#">List</a>
             </li>
@@ -32,9 +32,7 @@
       </div>
     </nav>
 
-    <div>
-      <p class="current-time"></p>
-    </div>
+    <p class="current-time"></p>
 
     <div class="list-page container-md d-flex flex-column align-items-center">
       <h1 class="h1 text-center my-4">All Awesome Books</h1>
@@ -65,15 +63,19 @@
       <ul>
         <li>Our e-mail: contact@awesomebooks.com</li>
         <li>Our phone number: 001 234 555-6677</li>
-        <li>Our address: 123, Bookstore St.</li>
+        <li>Our address: 123, Bookstore St., New York, US</li>
       </ul>
     </div>
     <footer class="footer mt-auto py-3 bg-light">
       <div class="container">Copyright</div>
     </footer>
-  
+
   </main>
-  
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <script src="luxon.js"></script>
   <script src="script.js"></script>
 </body>
 
