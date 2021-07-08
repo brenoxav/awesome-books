@@ -1,4 +1,5 @@
 /* eslint-disable max-classes-per-file */
+
 const listPageLink = document.querySelector('.list-page-link');
 const addPageLink = document.querySelector('.add-page-link');
 const contactPageLink = document.querySelector('.contact-page-link');
@@ -11,6 +12,7 @@ const booksWrapper = document.querySelector('.books-wrapper');
 const titleInput = document.querySelector('#new-book-title');
 const authorInput = document.querySelector('#new-book-author');
 const addBtn = document.querySelector('.add-btn');
+
 
 class Book {
   constructor(title, author) {
@@ -102,5 +104,33 @@ addBtn.addEventListener('click', () => {
   setStorage(library.getBooks());
 });
 
+function displayPage(currentPage) {
+  console.log('diplay page function')
+  if (currentPage.classList.contains('d-none')) {
+    currentPage.classList.remove('d-none')
+    switch (currentPage){
+      case listPage:
+        addPage.classList.add('d-none')
+        contactPage.classList.add('d-none')
+        break;
+      case addPage:
+        listPage.classList.add('d-none')
+        contactPage.classList.add('d-none')
+        break;
+      case contactPage:
+        addPage.classList.add('d-none')
+        listPage.classList.add('d-none')
+        break;
+    }
+  }
+  
+}
+
+
+listPageLink.addEventListener('click', () => displayPage(listPage));
+addPageLink.addEventListener('click', () => displayPage(addPage));
+contactPageLink.addEventListener('click', ()=> displayPage(contactPage));
+
 checkStorage();
 renderBooks(library.getBooks());
+
