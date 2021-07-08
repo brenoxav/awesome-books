@@ -4,7 +4,7 @@
 
 > A basic website that allows users to add/remove books from a list.
 
-
+![](screenshot.png)
 
 ## Built With
 
@@ -57,4 +57,4 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-- To developers, Microverse
+-  Microverse
